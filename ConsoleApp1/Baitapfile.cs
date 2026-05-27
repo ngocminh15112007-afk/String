@@ -4,11 +4,7 @@ namespace ConsoleApp1
 {
     internal class Baitapfile
     {
-        static void Main(string[] args)
-        {
-            string input = Input_Print();
-            Chenchu(input);
-        }
+       
         //bai1
         static string Input_Print()
         {
@@ -261,6 +257,21 @@ namespace ConsoleApp1
                 Console.WriteLine(kq);
             }
             else { Console.WriteLine("Khong tim thay cho can chen"); }
+        }
+        static void Chennhieuchu(string arr)
+        {
+            Console.Write("Muon chen truoc chu: ");
+            string chomoc = Console.ReadLine();
+            Console.Write("Chen chu gi ");
+            string chuchen = Console.ReadLine();
+            int vitri = arr.IndexOf(chomoc);
+            while (vitri!=-1)
+            {
+                arr = arr.Insert(vitri, chuchen);
+                int buocnhay = vitri + chuchen.Length + chomoc.Length;
+                vitri = arr.IndexOf(chomoc, buocnhay);
+
+            }
         }
 
 
