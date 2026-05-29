@@ -10,14 +10,7 @@ namespace ConsoleApp1
 {
     internal class Lamlai
     {
-        static void Main(string[] args)
-        {
-            string nhap = Taochuoi();
-            string[] input = Tachchuoi(nhap);
-            string tim = Taochuoi();
-            Xuathien(input, tim);
-
-        }
+       
         //  -to input a string and print it.
         public static string Taochuoi()
         {
