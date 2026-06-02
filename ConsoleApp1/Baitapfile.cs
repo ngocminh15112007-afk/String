@@ -1,4 +1,5 @@
-﻿using System.Threading.Channels;
+﻿using System.Runtime.CompilerServices;
+using System.Threading.Channels;
 
 namespace ConsoleApp1
 {
@@ -273,7 +274,48 @@ namespace ConsoleApp1
 
             }
         }
+        static void Dodai(string arr)
+        {
+            int count = 0;
+            foreach(char c in arr)
+            {
+                if (char.IsLetterOrDigit(c))
+                count++;
+            }
+            Console.WriteLine($"So luong ki tu la {count}");
+        }
+        static void Inchuoi(string arr)
+        {
+            string chuoibiendoi = "";
+            bool ladautu = true;
+            for (int i = 0; i<arr.Length; i++)
+            {
+                char c = arr[i];
+                if ( c == ' ')
+                { 
+                    chuoibiendoi += c;
+                    ladautu = true;
+                }
+                else
+                {
+                    if(ladautu)
+                    {
+                        if (c >= 'A' && c <= 'Z') c = (char)(c + 32);
+                        ladautu = false;
+                    }
+                    else
+                    {
+                        if (c >= 'a' && c <= 'z') c = (char)(c - 32);
+                    }
+                    chuoibiendoi += c;
+                }
+            }
+            Console.WriteLine($"- Chuỗi biến đổi chữ hoa/thường: {chuoibiendoi}");
+        }
+        static void Daothutu(string arr)
+        {
 
+        }
 
     }
 }
